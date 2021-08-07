@@ -1,2 +1,2 @@
 # sshpass
-A sshpass implementation in Go
+A sshpass implementation for Linux and Mac in Go
