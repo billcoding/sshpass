@@ -2,9 +2,6 @@ package app
 
 import (
 	"fmt"
-	"github.com/creack/pty"
-	"github.com/riywo/loginshell"
-	"golang.org/x/crypto/ssh/terminal"
 	"io"
 	"log"
 	"os"
@@ -13,6 +10,10 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/creack/pty"
+	"github.com/riywo/loginshell"
+	"golang.org/x/crypto/ssh/terminal"
 )
 
 type Options struct {
@@ -24,8 +25,8 @@ type Options struct {
 }
 
 var DefaultOptions = &Options{
-	ExpectedPrompt:              "password:",
-	ExpectedFailure:             "denied",
+	ExpectedPrompt:              "assword:", // match botch "Password:" and "password:"
+	ExpectedFailure:             "enied",    // match both "denied" and "Denied"
 	Timeout:                     time.Second * 10,
 	AutoConfirmHostAuthenticity: true,
 	Shell:                       "",
